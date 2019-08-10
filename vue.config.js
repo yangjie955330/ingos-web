@@ -9,12 +9,14 @@ function resolve(dir) {
 
 // config options
 module.exports = {
-  /*
-    * all configuration options you can see in this site => https://cli.vuejs.org/config/
-    */
 
-  // the base url address when publish you site
-  publicPath: '/',
+  /**
+   * all configuration options you can see in this site => https://cli.vuejs.org/config/
+   */
+
+  // the base url address when publish you site, the example site will deploy it in github page.
+  // when deploy it into you own server, you can change the site pre address to '/' 
+  publicPath: '/ingos-web/',
   // the output dir when build this project
   outputDir: 'dist',
   // a dir address which generate static files(js,css,imgs,fonts,etc)
