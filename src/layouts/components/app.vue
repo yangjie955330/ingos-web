@@ -2,7 +2,7 @@
   <section class="app-main">
     <transition
       name="fade-transform"
-      mode="fade-in"
+      mode="out-in"
     >
       <router-view :key="key" />
     </transition>
