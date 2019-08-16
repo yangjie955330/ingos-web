@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <p>home portal page</p>
-    </div>
+  <div>
+    <p>home portal page</p>
+  </div>
 </template>
 
 <script>

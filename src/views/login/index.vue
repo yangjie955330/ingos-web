@@ -2,26 +2,52 @@
   <div class="login-container">
     <div class="login-container-wapper">
       <el-row class="login-container-form">
-        <el-col :xs="22" :sm="4" :offset="17">
-          <el-card >
+        <el-col
+          :xs="22"
+          :sm="5"
+          :offset="17"
+        >
+          <el-card>
             <div slot="header">
               <span class="header">欢迎登录</span>
             </div>
-            <el-form ref="loginForm" :model="loginForm" :rules="rules">
+            <el-form
+              ref="loginForm"
+              :model="loginForm"
+              :rules="rules"
+            >
               <el-form-item prop="account">
-                <el-input v-model="loginForm.account" prefix-icon="el-icon-user" size="medium"
-                  placeholder="请输入用户名" clearable></el-input>
+                <el-input
+                  v-model="loginForm.account"
+                  prefix-icon="el-icon-user"
+                  size="medium"
+                  placeholder="请输入用户名"
+                  clearable
+                />
               </el-form-item>
               <el-form-item prop="password">
-                <el-input v-model="loginForm.password" prefix-icon="el-icon-lock" size="medium"
-                  placeholder="请输入登录密码" show-password></el-input>
+                <el-input
+                  v-model="loginForm.password"
+                  prefix-icon="el-icon-lock"
+                  size="medium"
+                  placeholder="请输入登录密码"
+                  show-password
+                />
               </el-form-item>
               <el-form-item>
-                <el-button type="primary" style="width:100%" size="small"
-                  @click.native.prevent="handleLogin" :loading="loading">{{loading?'正在登录中...':'登录'}}
+                <el-button
+                  type="primary"
+                  style="width:100%"
+                  size="small"
+                  @click.native.prevent="handleLogin"
+                  :loading="loading"
+                >
+                  {{ loading?'正在登录中...':'登录' }}
                 </el-button>
               </el-form-item>
-              <p style="font-size: 12px;text-align: center;color: #999;">输入任意用户名密码登录</p>
+              <p style="font-size: 12px;text-align: center;color: #999;">
+                输入任意用户名密码登录
+              </p>
             </el-form>
           </el-card>
         </el-col>
@@ -78,7 +104,7 @@ export default {
     }
 
     &-form {
-      top: 50%;
+      top: 55%;
       transform: translateY(-60%);
     }
   }

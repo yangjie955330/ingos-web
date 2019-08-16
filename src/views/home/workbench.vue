@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <p>home workbranch page</p>
-    </div>
+  <div>
+    <p>home workbranch page</p>
+  </div>
 </template>
 
 <script>

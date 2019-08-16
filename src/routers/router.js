@@ -37,9 +37,9 @@ const routes = [
 ];
 
 // loop folder to get all index.js file which contains router info
-const context = require.context('./', true, /index\.js%/);
-context.keys().forEach((router) => {
-  const module = context(router);
+const routerContext = require.context('./', true, /index\.js$/);
+routerContext.keys().forEach((router) => {
+  const module = routerContext(router);
   // set all router as a children page in layout page
   index.children = [
     ...index.children,

@@ -1,14 +1,17 @@
 <template>
   <section class="app-main">
-      <transition name="fade-transform" mode="fade-in">
-          <router-view :key="key"></router-view>
-      </transition>
+    <transition
+      name="fade-transform"
+      mode="fade-in"
+    >
+      <router-view :key="key" />
+    </transition>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: 'App',
   computed: {
     key() {
       return this.$route.path;
