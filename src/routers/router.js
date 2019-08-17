@@ -22,8 +22,8 @@ const index = {
 const routes = [
   index, {
     name: 'login',
-    path: '/login',
-    component: () => import('@/views/login/index'),
+    path: '/secret/login',
+    component: () => import('@/views/secret/login'),
     hidden: true,
   }, {
     name: '404',
@@ -47,8 +47,24 @@ routerContext.keys().forEach((router) => {
   ];
 });
 
-export default new Router({
+/**
+ * @description set router instance
+ */
+const createRouter = () => new Router({
   mode: 'hash', // temp set hash router mode
   base: process.env.BASE_URL,
   routes,
 });
+
+const router = createRouter();
+
+/**
+  * @description reset router info
+  */
+export function resetRouter() {
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher; // reset router
+}
+
+
+export default router;

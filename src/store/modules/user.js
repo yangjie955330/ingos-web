@@ -2,9 +2,13 @@
  * @description the app user states management
  */
 
+import { login, logout, getUserInfo } from '@/api/secret/index';
+import { getToken, setToken, removeToken } from '@/utils/authorize';
+import { resetRouter } from '@/routers/router';
+
 // define the default state
 const defaultState = {
-  token: '',
+  token: getToken(),
   name: '',
   avatar: '',
 };
@@ -28,6 +32,74 @@ const mutations = {
 
 // commit the mutations in order to change the state
 const actions = {
+  // user login
+  handleLogin({ commit }, userInfo) {
+    const { username, password } = userInfo;
+
+    /**
+     * @description set a promise object to show the result of async operation
+     * resolve: set promise state to success
+     * reject: set promise state to failure
+     */
+    return new Promise((resolve, reject) => {
+      login({ username: username.trim(), password })
+        .then((response) => {
+          const data = response;
+          commit('SET_TOKEN', data.token);
+          setToken(data.token);
+          resolve();
+        }).catch((error) => {
+          reject(error);
+        });
+    });
+  },
+
+  // get the login user info
+  handleGetUserInfo({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      getUserInfo(state.token)
+        .then((response) => {
+          const data = response;
+
+          if (!data) {
+            reject(new Error('Verification failed, please login again'));
+          }
+
+          const { name, avatar } = data;
+
+          commit('SET_NAME', name);
+          commit('SET_AVATAR', avatar);
+
+          resolve(data);
+        }).catch((error) => {
+          reject(error);
+        });
+    });
+  },
+
+  // user logout
+  handleLogout({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      logout(state.token)
+        .then(() => {
+          commit('SET_TOKEN', '');
+          removeToken();
+          resetRouter();
+          resolve();
+        }).catch((error) => {
+          reject(error);
+        });
+    });
+  },
+
+  // remove token info
+  handleRemoveToken({ commit }) {
+    return new Promise((resolve) => {
+      commit('SET_TOKEN', '');
+      removeToken();
+      resolve();
+    });
+  },
 };
 
 // export the default settings

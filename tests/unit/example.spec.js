@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
-import login from '@/views/login/index.vue';
+import login from '@/views/secret/login.vue';
 
 describe('login-index.vue', () => {
   it('renders props.msg when passed', () => {
