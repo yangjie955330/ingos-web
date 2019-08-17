@@ -35,19 +35,13 @@ export default {
   },
   computed: {
     sidebar() {
-      // return this.$store.state.app.sidebar
-      return {
-        opened: true,
-        withoutAnimation: true,
-      };
+      return this.$store.state.app.sidebar;
     },
     device() {
-      // return this.$store.state.app.device
-      return 'pc';
+      return this.$store.state.app.device;
     },
     fixedHeader() {
-      // return this.$store.state.settings.fixedHeader
-      return true;
+      return this.$store.state.settings.fixedHeader;
     },
     classObj() {
       return {

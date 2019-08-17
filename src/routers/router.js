@@ -14,7 +14,7 @@ Vue.use(Router);
 const index = {
   path: '/',
   component: layout,
-  redirect: '/login', // temp redirect to login page
+  redirect: '/secret/login', // temp redirect to login page
   children: [],
 };
 
