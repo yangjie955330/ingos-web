@@ -6,13 +6,6 @@ import { login, logout, getUserInfo } from '@/api/secret/index';
 import { getToken, setToken, removeToken } from '@/utils/authorize';
 import { resetRouter } from '@/routers/router';
 
-// define the default state
-const defaultState = {
-  token: getToken(),
-  name: '',
-  avatar: '',
-};
-
 // registration the mutations handler
 // to response state change
 const mutations = {
@@ -102,10 +95,17 @@ const actions = {
   },
 };
 
+// define the default state
+const state = {
+  token: getToken(),
+  name: '',
+  avatar: '',
+};
+
 // export the default settings
 export default {
   namespaced: true,
-  defaultState,
+  state,
   mutations,
   actions,
 };

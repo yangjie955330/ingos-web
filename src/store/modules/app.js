@@ -5,18 +5,6 @@
 // import cookie
 import cookies from 'js-cookie';
 
-// define the default state
-const defaultState = {
-  sidebar: {
-    // check the sidebar status
-    opened: cookies.get('sidebarStatus') ? !!+cookies.get('sidebarStatus') : true,
-    // whether contains animation
-    withoutAnimation: false,
-  },
-  // the default device
-  device: 'desktop',
-};
-
 // registration the mutations handler
 // to response state change
 const mutations = {
@@ -53,10 +41,22 @@ const actions = {
   },
 };
 
+// define the default state
+const state = {
+  sidebar: {
+    // check the sidebar status
+    opened: cookies.get('sidebarStatus') ? !!+cookies.get('sidebarStatus') : true,
+    // whether contains animation
+    withoutAnimation: false,
+  },
+  // the default device
+  device: 'desktop',
+};
+
 // export the default settings
 export default {
   namespaced: true,
-  defaultState,
+  state,
   mutations,
   actions,
 };

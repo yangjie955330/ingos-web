@@ -8,13 +8,6 @@ import defaultSettings from '@/settings';
 // define the default setting variables
 const { showSettings, fixedHeader, sidebarLogo } = defaultSettings;
 
-// define the default state
-const defaultState = {
-  showSettings,
-  fixedHeader,
-  sidebarLogo,
-};
-
 // registration the mutations handler
 // to response state change
 const mutations = {
@@ -34,10 +27,17 @@ const actions = {
   },
 };
 
+// define the default state
+const state = {
+  showSettings,
+  fixedHeader,
+  sidebarLogo,
+};
+
 // export the default settings
 export default {
   namespaced: true,
-  defaultState,
+  state,
   mutations,
   actions,
 };
