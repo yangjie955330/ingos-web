@@ -1,4 +1,5 @@
-# ingos.ui
+# ingos-web
+## This project is a secondary development vue project template which based on [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template/).
 
 ## Project setup
 ```
