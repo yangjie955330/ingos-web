@@ -1,6 +1,6 @@
 import axios from 'axios';
 import message from 'element-ui';
-import getters from '@/store/getters';
+import getters from '@/stores/getters';
 import getToken from './authorize';
 
 /**

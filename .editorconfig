@@ -1,3 +1,9 @@
+# http://editorconfig.org
+# config coding styles for multiple developers working on the same project across various editors and IDEs
+
+# top-most the editorconfig file
+root = true
+
 [*.{js,jsx,ts,tsx,vue}]
 indent_style = space
 indent_size = 2

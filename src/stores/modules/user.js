@@ -2,7 +2,7 @@
  * @description the app user states management
  */
 
-import { login, logout, getUserInfo } from '@/api/secret/index';
+import { login, logout, getUserInfo } from '@/apis/secret/index';
 import { getToken, setToken, removeToken } from '@/utils/authorize';
 import { resetRouter } from '@/routers/router';
 
