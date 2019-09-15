@@ -8,7 +8,7 @@ import getToken from './authorize';
  */
 const service = axios.create({
   // set the base url which http request
-  baseURL: process.env.BASE_API_URL,
+  baseURL: process.env.VUE_APP_BASE_API_URL,
   // set the request timeout
   timeout: 5000,
 });
